@@ -1,0 +1,519 @@
+html {
+	scroll-behavior: smooth;
+}
+a{
+	text-decoration: none;
+}
+body{
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+	-webkit-font-smoothing:antialiased; /*
+	am facut ca sa fie mai зглаженые fonturile*/
+	font-size: 14px;
+	color: #6c7279;
+}
+img{
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+}
+p{
+	margin: 0 0 10px;
+}
+
+/*CONTAINER*/
+.container{
+	width: 100%;
+	max-width: 1170px;
+	margin: 0 auto;
+}
+
+/*HEADER*/
+.header{
+	width: 100%;
+	background-color: #1e3853;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.header__inner{
+	width: 75%;
+	margin: 0 auto;
+	display: flex;
+	padding: 10px 20px;
+	justify-content: space-between;
+	align-items: center;
+}
+.header__inner a img{
+	margin: 0;
+	cursor: pointer;
+}
+
+
+
+/*NACIGATION*/
+.nav{
+	display: flex;
+}
+.nav__link{
+	list-style-type: none;
+	text-decoration: none;
+	font-size: 13px;
+	font-weight: 700px;
+	text-transform: uppercase;
+	color: #fff;
+	padding-right: 25px;
+	opacity: 0.75;
+	transition: opacity .2s linear;
+}
+.nav__link:last-child{
+	padding-right: 0px;
+}
+.nav__link a{
+	text-decoration: none;
+	color: #fff;
+}
+.nav__link:hover{
+	opacity: 1;
+	text-decoration: underline;
+}
+#BurgerArea{
+	display: none;
+	position: fixed;
+	right: 20px;
+	top: 10px;
+	width: 30px;
+	height: 30px;
+	
+}
+#BurgerArea span{
+	display: block;
+	width: 100%;
+	height: 3px;
+	background-color: #fff;
+	transition: all .2s linear;
+}
+/* #BurgerArea span:before{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 3px;
+	background-color: #fff;
+	margin-top: 40px;
+} */
+#BurgerArea span:before,
+#BurgerArea span:after{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 3px;
+	background-color: #fff;
+	transition: all .2s linear;
+}
+#BurgerArea span:before{
+	margin-top: 20px;
+}
+#BurgerArea span:after{
+	margin-top: 10px;
+}
+#BurgerArea span.burger__active:before{
+	display: none;
+}
+span.burger__active{
+	transform: rotate(45deg) translate(10px, 9px);
+}
+span.burger__active:after{
+	transform: rotate(90deg) translate(-9px, 0px);
+}
+
+/*INTRO*/
+.intro{
+	display: flex;
+	flex-direction: column;
+	/*Fiecare element noi din
+	intro va incepe cu rand nou*/
+	justify-content: center;
+	padding-top: 100px;
+	height: 750px;
+	background: #31344f url("https://images.unsplash.com/photo-1599724290412-88e9fd9ed552?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")
+	center no-repeat;/* punem si culoare in caz 
+	de
+	interetu e slab si fotografia inca nu 
+	sa uncarcat*/
+	background-size: cover;
+}
+.intro__title{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 5rem;
+	margin-bottom: 30px;
+	color: #fff;
+	font-weight: 700;
+
+	line-height: 1.1;/*distanta intre linii
+	 txt*/
+	
+	text-transform: uppercase;
+	text-align: center;
+}
+.intro__inner{
+	max-width: 970px;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0 20px;
+}
+.intro__subtitle{
+	font-family: 'Raleway', sans-serif;
+	font-size: 22px;
+	margin-bottom: 70px;
+	font-weight: 400;
+	text-align: center;
+	color: #fff;
+	line-height: 1.4;
+
+}
+/*BUTTON*/
+.btn{
+	display: inline-block; /* ca sa putem 
+	pune paddinguri, marimea .....*/
+	vertical-align: top;
+	font-size: 13px;
+
+	font-family: 'Raleway', sans-serif;
+	border: 0;
+	cursor: pointer;
+
+
+	border-radius:2px;/*facem colturile 
+	rotunde*/
+
+	font-weight: 600;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #fff;
+
+}
+.btn--blue{
+	background-color: #1e3853;
+	padding: 15px 40px; 
+}
+.btn--blue:hover{
+	background-color: #325172;
+	transition: background .2s linear;
+}
+
+/*WE ARE*/
+.we_are_container{
+	display: flex;
+	flex-wrap: wrap;
+}
+.we__are{
+	margin: 100px 0;
+}.we__are__info{
+	width: 33.333%;
+	text-align: center;
+	margin-bottom: 60px;
+}
+.we__are__icon{
+	margin-bottom: 35px;
+}
+
+.we__are__title{
+	font-family: 'Raleway', sans-serif;
+	margin-bottom: 30px;
+	font-weight: 700;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #000;
+
+}
+.we__are__text{
+	max-width: 300px;
+	margin: 0 auto;
+	line-height: 1.5;
+	font-weight: 400;
+	font-size: 14px;
+}
+.fab:hover{
+	cursor: pointer;
+}
+/*WORKS*/
+.works{
+	display: flex;
+	flex-wrap: wrap	;
+}
+.works__item{
+	position: relative;
+	width: 25%;
+	background-color:  #1e3853;
+}
+.works__image{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: all .5s linear;
+}
+.works__item.item--hover .works__image{
+	opacity: .1;
+}
+.works__item.item--hover .works__text{
+	display: block;
+}
+
+.works__text{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	color: #fff;
+	transform: translate(-50%,-50%);
+	z-index: 10;
+	display: none;
+	transition: all .2s linear;
+}
+
+
+.works__name{
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+.works__subname{
+	font-size: 14px;
+	font-weight: 400;
+}
+
+/*TEAM_____________________*/
+.team{
+	margin-top: 90px;
+}
+.team_content{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-bottom: 20px;
+}
+.team__item{
+	width: 20%;
+	font-family: 'Raleway', sans-serif;
+}
+.team_name{
+	font-size: 22px;
+	font-weight: 300px;
+	color: #000;
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+.team_prof{
+	font-size: 13px;
+	font-weight: 300px;
+	color: #e84545;
+	text-transform: uppercase;
+	margin-bottom: 25px;
+}
+.team__item img{
+	width: 100%;
+}
+.team__descr{
+	width: 100%;
+	font-size: 14px;
+	font-weight: 300px;
+	color: #6c7279;
+	line-height: 1.5;
+}
+.team__social{
+	margin-top: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.team__social a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #e8ecee;
+	color: #6c7279;
+	margin-right: 5px;
+	transition: all .2s linear;
+}
+.team__social a:hover{
+	width: 40px;
+	height: 40px;
+	font-size: 2rem;
+}
+
+
+	
+/*Video--------------*/
+.video__sat{
+	width: 77%;
+	height: 600px;
+	margin: 0 auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	display: block;
+}
+/*LOCAION---------------------------*/
+
+.footer{
+	width: 100%;
+	background-color: #1e3853;
+}
+.footer_info{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-bottom: 100px;
+	padding-top: 60px;
+	color: #fff;
+}
+.footer_name{
+	width: 30%;
+	margin: 0 auto;
+	text-align: center;
+}
+.footer_info_title{
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 15px;
+}
+.footer_info_subtitle{
+	opacity: .5;
+	font-size: 14px;
+}
+.footer_link{
+		text-decoration: none;
+		color: #fff;
+
+}
+.team__social--footer{
+	margin: 0 auto;
+	justify-content: center;
+}
+.subsol{
+	width: 100%;
+	background-color: #1e3853;
+}
+.subsol_text{
+	text-align: center;
+	padding: 25px 0;
+}
+.our__grups{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.group__name{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #e8ecee;
+	margin-right: 5px;
+}
+.made{
+	justify-content: center;
+	display: flex;
+}
+.made_name{
+	color: #fff;
+	cursor: pointer;
+}
+.made div{
+	margin-right: 3px;
+}
+@media screen and (max-width: 1000px){
+	.intro__title{
+		font-size: 4rem;
+	}
+	.works__item{
+		width: 50%;
+	}
+	.team__item{
+		width: 40%;
+		margin: 40px 0 0 0;
+	}
+	.team__social{
+		margin-top:10px;
+	}
+	.team_content{
+		width: 90%;
+		margin: 0 auto;
+	}
+	#BurgerArea{
+		display: block;
+		cursor: pointer;
+	}
+	.nav{
+		display: none;
+	}
+	.nav.responsive_nav{
+		display: block;
+		text-align: right;
+	}
+	.nav.responsive_nav .nav__link{
+		padding: 0;
+		font-size: 1.5rem;
+		margin-bottom: 10px;
+	}
+	.nav.responsive_nav .nav__link:first-child{
+		margin-top: 40px;
+	}
+	.header__inner{
+		width: 100%;
+	}
+	.video__sat{
+		height: 400px;
+	}
+
+
+}
+@media screen and (max-width: 700px){
+	.we__are__info{
+		width: 50%;
+	}
+	.footer_name{
+		width: 60%;
+		margin-bottom: 50px;
+	}
+	.footer_info{
+		padding-bottom: 0;
+	}
+	.intro__title{
+		font-size: 2rem;
+	}
+	.video__sat{
+		height: 200px;
+	}
+	.intro__subtitle{
+		margin-bottom: 30px;
+	}
+	.intro{
+		padding-top: 40px;
+		height: 500px;
+	}
+
+
+
+
+	/* nav */
+	
+}
